@@ -11,14 +11,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html>
     <head>
-        <title>TODO mmm supply a title</title>
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="style.css" type="text/css"/>
 
     <style>
-body, h1,h2,h3,h4 {font-family: "Montserrat", sans-serif}
+ h2 {text-align: center; font-size:30px}  
+ p { text-align: center}
+ #gimp { text-align:center}
+ #ink {text-align:center}
+body, h1,h2,h3,h4 {font-family: "Garamond"; font-size:20px}
 .w3-row-padding img {margin-bottom: 12px}
 /* Set the width of the sidebar to 120px */
 .w3-sidebar {width: 120px;background: #fcb6f9;}
@@ -26,6 +30,18 @@ body, h1,h2,h3,h4 {font-family: "Montserrat", sans-serif}
 #main {margin-left: 120px}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+#ideja {display:none;}
+ .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            align-items: center; /* Align items vertically */
+            gap: 20px; /* Space between grid items */
+            margin-bottom: 20px;
+        }
+        .images {
+            display: flex;
+            gap: 10px; /* Space between images */
+        }
 </style>
     </head>
     <body>
@@ -63,38 +79,72 @@ body, h1,h2,h3,h4 {font-family: "Montserrat", sans-serif}
     <h2 class="w3-serif-16 w3-text-black">Vektorgrafika un rakstgrafika</h2>
     <hr style="width:200px" class="dd9df0">
     <p>Šajāmācību gada es esmu darbojusies ar dažādām datora programmām, piemēram, Excel,IncScape, un arī esmu iepazinusi jaunu programmu - Gimp. Esmu iemācījusies daudzus rīkus un funkcijas, ko izmantot, lai atvieglotu darbu ar šīm lietotnēm. Šeit ir daļa no maniem paveiktajiem darbiem pa visam datorikas tēmām. </p>
-    <h3 class="w3-padding-16 w3-text-pink">Iespējas rastrgrafikas lietotnē GIMP</h3>
-    <h4 class="w3-padding-16 w3-text-pink">Saplēstās bildes zīmējums un vārds</h4>
-     <img src="images/bildegriezt.png" alt="udens" width="250" height=150"/>
-     <img src="images/Ekrānuzņēmums 2025-02-14 135652.png" alt="vards" width=250 height=150/>
-    <h3 class="w3-padding-16 w3-text-pink">Iespējas rastrgrafikas lietotnē InkScape</h3>
-    <h4 class="w3-padding-16 w3-text-light-grey">mani darbiņi</h4>
-     <img src="images/sirsninaink.png" alt="sirds" width=150 height=150/>
-     <img src="images/kubsink.png" alt="kubs" width=150 height=150/>      
+ 
+    
+           <h3 id="gimp" class="w3-padding-16 w3-text-pink">Iespējas rastrgrafikas lietotnē GIMP</h3>
+            <div class="grid-container">
+        <div>
+            <b><h4 class="w3-padding-16 w3-text-black">Saplēstās bildes zīmējums un vārds</h4></b>
+        </div>
+        <div class="images">
+           <img src="images/bildegriezt.png" alt="udens" width="250" height=150"/>
+           <img src="images/Ekrānuzņēmums 2025-02-14 135652.png" alt="vards" width=250 height=150/>
+        </div><!-- comment -->
+    </div>
+    
+           <h3 id="ink" class="w3-padding-16 w3-text-pink">Iespējas rastrgrafikas lietotnē InkScape</h3>
+           <div class="grid-container">
+        <div>
+            <b><h4 class="w3-padding-16 w3-text-black">mani darbiņi</h4></b>
+        </div>
+        <div class="images">
+           <img src="images/sirsninaink.png" alt="sirds" width=150 height=150/>
+           <img src="images/kubsink.png" alt="kubs" width="250" height="150"/>
+        </div>
+    </div>
+     
 </div>
   
    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="grupudarbs">
     <h2 class="w3-text-black">Grupu darbs</h2>
     <hr style="width:200px" class="w3-opacity">
-    <p>kopa arklasesbiedrneem bija jataisa uzņēmuma ideja un logo. musu ideja .... </p>
+    <p>Kopā ar klasesbiedrenēm ija jāizveido uzņēmuma ideja.Mūsu ideja bija veidot vienreizlietojamās kafijas krūzītes, kas būtu no dabīgiem materiāliem un varētu pārstrādāties. Attēlā ir redzama ir mana logo ideja.<span id="dots"> </span> <br>
+        <button onclick="myFunction()" id="myBtn">Vēl par ideju</button>
+        <span id="ideja"> Mūsu krūzītes būtu tādas kas var izturēt augstas temperatūras un nesadalītos kamēr tās lieto.Tās sadalītos dabīgi zemē, atšķirībā no plastmasas krūzītēm. </span></p>
+    <script>
+        function myFunction(){
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("ideja");
+            var btnText = document.getElementById("myBtn");
+            if (dots.style.display === "none"){
+                dots.style.display = "inline";
+                btnText.innerHTML = "Vēl par ideju";
+                moreText.style.display = "none";
+            } else {
+               dots.style.display = "none";
+               btnText.innerHTML = "Aizvērt";
+               moreText.style.display = "inline"; 
+            }
+        }
+    </script>
     <h3 class="w3-padding-16 w3-text-pink">Uzņemuma logo skice</h3>
-     <img src="images/logo.png" alt="logo" width="500" height=300"/>
+     <img src="images/logo.png" alt="logo" width="200" height="250"/>
     <h3 class="w3-padding-16 w3-text-pink">3D modelēšana</h3>
-    <img src="images/3d.png" alt="gabalins" width="500" height=300"/>
+    <img src="images/3d.png" alt="gabalins" width="250" height="150"/>
     <h3 class="w3-padding-16 w3-text-pink"> Video apstrades pamatprincipi</h3>
    </div> 
     
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="Word">
       <h2 class="w3-text-black">MS Word rīku pielietošana teksta formatēšanā</h2>
       <hr style="width:200px" class="dd9df0">
-       <img src="images/ielugums.png" alt="ielugums" width="500" height=300"/>
+       <img src="images/ielugums.png" alt="ielugums" width="250" height="350"/>
   </div>
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="excel">
       <h2 class="w3-text-black">Excel</h2>
       <hr style="width:200px" class="dd9df0">
-      <img src="images/grafiks.png" alt="grafiks" width="500" height=300"/>
+      <img src="images/grafiks.png" alt="grafiks" width="300" height="200"/>
   </div>
-   <a href="otrais.html">ergonomija</a>
+  <p> Ja vēlies uzzināt vairāk par ergonomisku darba vidi spied šeit &#8594 <a href="otrais.html">ergonomija</a></p> 
         
        
         
